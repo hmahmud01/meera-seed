@@ -100,7 +100,7 @@
 
                     <strong>Detail in Bangla:</strong>
 
-                    <textarea class="form-control" style="height:150px" name="bangla" placeholder="Detail">{{ $product->detail }}</textarea>
+                    <textarea class="form-control" style="height:150px" name="bangla" placeholder="Detail">{{ $product->bangla }}</textarea>
 
                 </div>
 

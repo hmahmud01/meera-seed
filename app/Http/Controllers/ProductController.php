@@ -9,6 +9,7 @@ namespace App\Http\Controllers;
 use App\Models\Product;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
   
 
@@ -29,14 +30,14 @@ class ProductController extends Controller
     public function index()
 
     {
+        if(Auth::check()){
+            $products = Product::latest()->paginate(5);  
 
-        $products = Product::latest()->paginate(5);
-
-    
-
-        return view('products.index',compact('products'))
-
-            ->with('i', (request()->input('page', 1) - 1) * 5);
+            return view('products.index',compact('products'))
+                ->with('i', (request()->input('page', 1) - 1) * 5);
+        }
+  
+        return redirect("login")->withSuccess('You are not allowed to access');       
 
     }
 

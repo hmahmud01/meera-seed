@@ -69,7 +69,7 @@
 
                         <strong>Category:</strong>
 
-                        {{ $product->category }}
+                        {{ $product->category_id }}
 
                     </div>
 

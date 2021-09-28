@@ -26,9 +26,9 @@
                     </div>
 
                     <div class="pull-right">
-
-                        <a class="btn btn-success" href="{{ route('products.create') }}"> Create New Product</a>
-
+                        <a class="btn btn-success" href="{{ route('products.create') }}"> Create New Product</a>                        
+                        <a class="btn btn-info" href="{{ route('categorys.create') }}"> Create New Category</a>                        
+                        
                     </div>
 
                 </div>
@@ -108,6 +108,49 @@
                 @endforeach
 
             </table>
+
+
+            <div class="mt-5">
+                <h2>Existing Category</h2>
+
+                <table class="table table-bordered">
+
+                    <tr>
+
+                        <th>No</th>
+
+                        <th>Name</th>
+
+                        <th>Title</th>
+
+                    </tr>
+
+                    @foreach ($categorys as $category)
+
+                    <tr>
+
+                        <td>{{ ++$i }}</td>
+
+                        <td>{{ $category->name }}</td>
+
+                        <td>{{ $category->title }}</td>
+
+                        <td>
+
+                            <form action="{{ route('categorys.destroy',$category->id) }}" method="POST">  
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="btn btn-danger">Delete</button>
+                            </form>
+                        </td>
+
+                    </tr>
+
+                    @endforeach
+
+                </table>
+            </div>
+
 
 
 

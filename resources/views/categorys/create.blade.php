@@ -1,4 +1,4 @@
-@extends('products.layout')
+@extends('categorys.layout')
 
      
 <x-app-layout>
@@ -19,7 +19,7 @@
 
                     <div class="pull-left">
 
-                    <h2>Product Add</h2>
+                    <h2>Category Add</h2>
 
                     </div>
 
@@ -57,7 +57,7 @@
 
             
 
-            <form action="{{ route('products.store') }}" method="POST" enctype="multipart/form-data">
+            <form action="{{ route('categorys.store') }}" method="POST" enctype="multipart/form-data">
 
                 @csrf
 
@@ -81,64 +81,13 @@
 
                         <div class="form-group">
 
-                            <strong>Subtitle:</strong>
+                            <strong>Title:</strong>
 
-                            <input type="text" name="subtitle" class="form-control" placeholder="Subtitle">
-
-                        </div>
-
-                    </div>
-
-                    <div class="col-xs-12 col-sm-12 col-md-12">
-
-                        <div class="form-group">
-
-                            <strong>Detail:</strong>
-
-                            <textarea class="form-control" style="height:150px" name="detail" placeholder="Detail"></textarea>
+                            <input type="text" name="title" class="form-control" placeholder="Title">
 
                         </div>
 
                     </div>
-
-                    <div class="col-xs-12 col-sm-12 col-md-12">
-
-                        <div class="form-group">
-
-                            <strong>Detail in Bangla:</strong>
-
-                            <textarea class="form-control" style="height:150px" name="bangla" placeholder="Detail"></textarea>
-
-                        </div>
-
-                    </div>
-
-                    <div class="col-xs-12 col-sm-12 col-md-12">
-
-                        <div class="form-group">
-                            <label for="category">Category</label>
-                            <select class="form-control" name="category_id" id="category">
-                                @foreach ($categorys as $category)
-                                <option value="{{ $category->id }}">{{ $category->name }}</option>
-                                @endforeach             
-                            </select>
-                        </div>
-
-                    </div>
-
-                    <div class="col-xs-12 col-sm-12 col-md-12">
-
-                        <div class="form-group">
-
-                            <strong>Image:</strong>
-
-                            <input type="file" name="image" class="form-control" placeholder="image">
-
-                        </div>
-
-                    </div>
-
-
 
                     <div class="col-xs-12 col-sm-12 col-md-12 text-center">
 

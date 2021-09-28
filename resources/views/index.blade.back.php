@@ -8,7 +8,7 @@
     <meta name="description" content="Meera Website" />
     <link rel="icon" href="assets/images/LOGO.png" type="image/png" sizes="16x16">
 
-    <title>Meeraseed</title>
+    <title>Meera</title>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
         crossorigin="anonymous">
@@ -62,7 +62,7 @@
     <!-- ============= COMPONENT ============== -->
     <nav id="navbar_top" class="navbar navbar-expand-lg navbar-light navbar-meera">
         <div class="container">
-            <a class="navbar-brand" href="#">meeraseed</a>
+            <a class="navbar-brand" href="#">mai</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main_nav"
                 aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -70,8 +70,11 @@
             <div class="collapse navbar-collapse" id="main_nav">
                 <ul class="navbar-nav">
                     <li class="nav-item"><a class="nav-link" href="#seed"> Seed </a></li>
+                    <li class="nav-item"><a class="nav-link" href="#compost"> Compost </a></li>
+                    <li class="nav-item"><a class="nav-link" href="#equipment"> Equipment </a></li>
+                    <li class="nav-item"><a class="nav-link" href="#commodity"> Commodity </a></li>
                     <li class="nav-item"><a class="nav-link" href="#"> <i class="bi bi-house-fill"></i> </a></li>
-                    <li class="nav-item"><a class="nav-link" href="#footer"> <i class="bi bi-journal-bookmark-fill"></i> </a></li>
+                    <li class="nav-item"><a class="nav-link" href="#"> <i class="bi bi-journal-bookmark-fill"></i> </a></li>
                 </ul>
                 <!-- <ul class="navbar-nav ms-auto">
                     <li class="nav-item"><a class="nav-link" href="#"> <i class="bi bi-house-fill"></i> </a></li>
@@ -109,7 +112,7 @@
                         <hr class="featurette-divider">
                         @endforeach
 
-                        <!-- <div class="row featurette d-flex">
+                        <div class="row featurette d-flex">
                             <div class="col-md-7 align-self-center">
                                 <h2 class="featurette-heading">F1 Bitter Gourd</h2>
                                 <p class="lead">Vigorous plants with prolific bearing habit. Starts fruiting in 45-50 days
@@ -139,7 +142,7 @@
                             </div>
                         </div>
 
-                        <hr class="featurette-divider"> -->
+                        <hr class="featurette-divider">
                         
                     </div>
                     <div id="compost">
@@ -161,7 +164,7 @@
         
                             <hr class="featurette-divider">
                         @endforeach
-                        <!-- <div class="row featurette d-flex">
+                        <div class="row featurette d-flex">
                             <div class="col-md-7 align-self-center">
                                 <h2 class="featurette-heading">F1 Bitter Gourd</h2>
                                 <p class="lead">Vigorous plants with prolific bearing habit. Starts fruiting in 45-50 days
@@ -190,7 +193,7 @@
                             </div>
                         </div>
     
-                        <hr class="featurette-divider"> -->
+                        <hr class="featurette-divider">
                     </div>
                     <div id="equipment">
                         @foreach ($equipment_prod as $product)
@@ -211,7 +214,7 @@
         
                             <hr class="featurette-divider">
                         @endforeach
-                        <!-- <div class="row featurette d-flex">
+                        <div class="row featurette d-flex">
                             <div class="col-md-7 align-self-center">
                                 <h2 class="featurette-heading">F1 Bitter Gourd</h2>
                                 <p class="lead">Vigorous plants with prolific bearing habit. Starts fruiting in 45-50 days
@@ -239,7 +242,7 @@
                             </div>
                         </div>
     
-                        <hr class="featurette-divider"> -->
+                        <hr class="featurette-divider">
                     </div>
                     <div id="commodity">
                     @foreach ($commodity_prod as $product)
@@ -260,7 +263,7 @@
     
                         <hr class="featurette-divider">
                     @endforeach
-                    <!-- <div class="row featurette d-flex">
+                    <div class="row featurette d-flex">
                         <div class="col-md-7 align-self-center">
                             <h2 class="featurette-heading">F1 Bitter Gourd</h2>
                             <p class="lead">Vigorous plants with prolific bearing habit. Starts fruiting in 45-50 days
@@ -304,21 +307,18 @@
                             <img src="/assets/images/010-EGGPLANT-QUEEN.png" class="image-size mx-auto d-block" alt="">
 
                         </div>
-                    </div> -->
                     </div>
-                </div>                
+                    </div>
+                </div>
+
+                <!-- FOOTER -->
+                <footer class="container mt-5 p-2 m-3">
+                    <p class="float-end"><a href="#">Back to top</a></p>
+                    <p>&copy; 2021  <a href="index.html">MAI Ltd.</a> &middot;
+                    </p>
+                </footer>
             </main>
-            
         </section>
     </div>
-    <footer id="footer" class="footer mt-auto py-3 bg-dark text-white">
-        <div class="container">
-            <p class="float-end"><a href="#">Back to top</a></p>
-            <p>&copy; 2021  <a href="/">Meera Seed Ltd.</a> &middot;</p>
-            <p>4th Floor, Build. No. 2</p>
-            <p>6 Natak Sarani, Dhaka-1000, Bangladesh</p>
-            <p>Tel: +880 2-41031883, +8802222228430, +88022222220866</p>
-        </div>
-    </footer>
 </body>
 </html>

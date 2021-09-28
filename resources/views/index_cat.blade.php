@@ -50,15 +50,6 @@
 
 <body class="bg-meera">
 
-    <div class="bg-meera py-3 d-flex" style="height: 94vh">
-        <div class="container align-self-center">
-            <div class="d-flex justify-content-center">
-                <img src="/assets/images/LOGO.png" alt="" class="scale-in-center logo-size">
-            </div>
-
-        </div>
-    </div>
-
     <!-- ============= COMPONENT ============== -->
     <nav id="navbar_top" class="navbar navbar-expand-lg navbar-light navbar-meera">
         <div class="container">
@@ -89,17 +80,14 @@
         <section>
             <main>
                 <div class="container">
-                    <div class="mt-5 mb-5">
-                        <h2 class="featurette-heading">Categories</h2>
-                        @foreach ($categorys as $category)
-                        <a href="{{ route('categorys.show',$category->id) }}">{{ $category->name }}</a>
-                        @endforeach
+                    <div class="mt-5">
+                        <h2 class="featurette-heading">{{ $category->name }}</h2>
                     </div>
                 </div>
                 
-                <!-- <div class="container marketing mt-5 mb-5">
+                <div class="container marketing mt-5 mb-5">
                     <div id="seed">
-                        @foreach ($seed_prod as $product)
+                        @foreach ($products as $product)
                         <div class="row featurette d-flex">
                             <div class="col-md-6 align-self-center">
                                 <h2 class="featurette-heading">{{ $product->name }}</h2>
@@ -118,69 +106,7 @@
                         <hr class="featurette-divider">
                         @endforeach                        
                     </div>
-                    <div id="compost">
-                        @foreach ($compost_prod as $product)
-                            <div class="row featurette d-flex">
-                                <div class="col-md-7 align-self-center">
-                                    <h2 class="featurette-heading">{{ $product->name }}</h2>
-                                    <p>{{ $product->subtitle }}</p>
-                                    <p class="lead">{{ $product->detail }}</p>
-                                    <p class="lead">{{ $product->bangla }}</p>
-                                </div>
-                                <div class="col-md-5">                                
-                                    <div class="image-size">                                    
-                                        <img class="image-size mx-auto d-block"
-                                            src="/image/{{ $product->image }}" alt="">
-                                    </div>
-                                </div>
-                            </div>
-        
-                            <hr class="featurette-divider">
-                        @endforeach
-
-                    </div>
-                    <div id="equipment">
-                        @foreach ($equipment_prod as $product)
-                            <div class="row featurette d-flex">
-                                <div class="col-md-7 align-self-center">
-                                    <h2 class="featurette-heading">{{ $product->name }}</h2>
-                                    <p>{{ $product->subtitle }}</p>
-                                    <p class="lead">{{ $product->detail }}</p>
-                                    <p class="lead">{{ $product->bangla }}</p>
-                                </div>
-                                <div class="col-md-5">                                
-                                    <div class="image-size">                                    
-                                        <img class="image-size mx-auto d-block"
-                                            src="/image/{{ $product->image }}" alt="">
-                                    </div>
-                                </div>
-                            </div>
-        
-                            <hr class="featurette-divider">
-                        @endforeach
-
-                    </div>
-                    <div id="commodity">
-                    @foreach ($commodity_prod as $product)
-                        <div class="row featurette d-flex">
-                            <div class="col-md-7 align-self-center">
-                                <h2 class="featurette-heading">{{ $product->name }}</h2>
-                                <p>{{ $product->subtitle }}</p>
-                                <p class="lead">{{ $product->detail }}</p>
-                            </div>
-                            <div class="col-md-5">                                
-                                <div class="image-size">                                    
-                                    <img class="image-size mx-auto d-block"
-                                        src="/image/{{ $product->image }}" alt="">
-                                </div>
-                            </div>
-                        </div>
-    
-                        <hr class="featurette-divider">
-                    @endforeach
-   
-                    </div>
-                </div>                 -->
+                </div>                
             </main>
             
         </section>

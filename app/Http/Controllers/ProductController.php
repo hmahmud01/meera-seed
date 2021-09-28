@@ -7,6 +7,7 @@ namespace App\Http\Controllers;
   
 
 use App\Models\Product;
+use App\Models\Category;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -32,8 +33,9 @@ class ProductController extends Controller
     {
         if(Auth::check()){
             $products = Product::latest()->paginate(5);  
+            $categorys = Category::all();
 
-            return view('products.index',compact('products'))
+            return view('products.index',compact('products', 'categorys'))
                 ->with('i', (request()->input('page', 1) - 1) * 5);
         }
   
@@ -43,17 +45,24 @@ class ProductController extends Controller
 
     public function homepage()
     {
+        $categorys = Category::all();
         $seed = "seed";
         $compost = "compost";
         $equipment = "equipment";
         $commodity = "commodity";
 
-        $seed_prod = Product::where('category', 'LIKE', '%'.$seed.'%')->get();
-        $compost_prod = Product::where('category', 'LIKE', '%'.$compost.'%')->get();
-        $equipment_prod = Product::where('category', 'LIKE', '%'.$equipment.'%')->get();
-        $commodity_prod = Product::where('category', 'LIKE', '%'.$commodity.'%')->get();
+        // $seed_prod = Product::where('category', 'LIKE', '%'.$seed.'%')->get();
+        // $compost_prod = Product::where('category', 'LIKE', '%'.$compost.'%')->get();
+        // $equipment_prod = Product::where('category', 'LIKE', '%'.$equipment.'%')->get();
+        // $commodity_prod = Product::where('category', 'LIKE', '%'.$commodity.'%')->get();
 
-        return view('index', compact('seed_prod', 'compost_prod', 'equipment_prod', 'commodity_prod'));
+        $seed_prod = Product::all();
+        $compost_prod = Product::all();
+        $equipment_prod = Product::all();
+        $commodity_prod = Product::all();
+
+        return view('index', compact('seed_prod', 'compost_prod', 'equipment_prod', 'commodity_prod', 'categorys'));
+        
     }
 
    
@@ -72,7 +81,8 @@ class ProductController extends Controller
 
     {
 
-        return view('products.create');
+        $categorys = Category::all();
+        return view('products.create', compact('categorys'));
 
     }
 
@@ -104,7 +114,7 @@ class ProductController extends Controller
 
             'bangla' => 'required',
 
-            'category' => 'required',
+            'category_id' => 'required',
 
             'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg',
 
